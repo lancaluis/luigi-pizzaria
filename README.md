@@ -1,5 +1,5 @@
 ## Luigi's Pizzaria
-Trabalho avaliativo referente a matéria de Orientação a Objetos da FATEC Jundiaí.
+Trabalho avaliativo referente a matéria de Orientação a Objetos com Java da FATEC Jundiaí.
 
 ### Equipe
 - [Fernanda Fernandes](https://github.com/fernandafernandes)
