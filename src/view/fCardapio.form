@@ -53,7 +53,7 @@
                       <Component id="btListarTodos" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jLabel5" max="32767" attributes="0"/>
-                  <Component id="paVinho" alignment="0" max="32767" attributes="0"/>
+                  <Component id="paCardapio" alignment="0" max="32767" attributes="0"/>
                   <Component id="jScrollPane2" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="14" max="32767" attributes="0"/>
@@ -82,7 +82,7 @@
                   <Component id="btListarTodos" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="paVinho" min="-2" max="-2" attributes="0"/>
+              <Component id="paCardapio" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="197" max="-2" attributes="0"/>
               <EmptySpace pref="18" max="32767" attributes="0"/>
@@ -93,32 +93,23 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btAlterar">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagens/edit24.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Alterar"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btExcluir">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagens/delete24.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Excluir"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btSalvar">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagens/success24.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Salvar"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JPanel" name="paVinho">
+    <Container class="javax.swing.JPanel" name="paCardapio">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
@@ -132,39 +123,34 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="txtSafra" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtPreco" max="32767" attributes="0"/>
-                              </Group>
-                              <Component id="txtNomeVinho" min="-2" pref="262" max="-2" attributes="0"/>
-                              <Component id="lblCodigo" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="txtTamanho" min="-2" pref="71" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtPreco" max="32767" attributes="0"/>
                       </Group>
+                      <Component id="txtNomeCardapio" min="-2" pref="262" max="-2" attributes="0"/>
+                      <Component id="lblCodigo" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtPais" min="-2" pref="173" max="-2" attributes="0"/>
+                  <Component id="txtDescricao" min="-2" pref="173" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -180,14 +166,14 @@
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtNomeVinho" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNomeCardapio" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtPais" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDescricao" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtSafra" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtTamanho" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtPreco" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -204,30 +190,30 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nome Vinho:"/>
+            <Property name="text" type="java.lang.String" value="Sabor"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Safra:"/>
+            <Property name="text" type="java.lang.String" value="Tamanho"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtNomeVinho">
+        <Component class="javax.swing.JTextField" name="txtNomeCardapio">
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtSafra">
+        <Component class="javax.swing.JTextField" name="txtTamanho">
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Pa&#xed;s"/>
+            <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtPais">
+        <Component class="javax.swing.JTextField" name="txtDescricao">
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -248,9 +234,6 @@
     </Container>
     <Component class="javax.swing.JButton" name="btCancelar">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagens/cancel24.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
@@ -267,15 +250,12 @@
     </Component>
     <Component class="javax.swing.JButton" name="btListarTodos">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagens/Open-Folder-Full24.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Listar Todos"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Localizar Vinho por nome:"/>
+        <Property name="text" type="java.lang.String" value="Localizar Pizza:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
@@ -289,10 +269,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="99" type="rgb"/>
         </Property>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagens/brancorouge.jpeg"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="        Vinhos"/>
+        <Property name="text" type="java.lang.String" value="                     Pizzas"/>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
       <AccessibilityProperties>
@@ -306,14 +283,14 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="tbVinho">
+        <Component class="javax.swing.JTable" name="tbCardapio">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="5" rowCount="0">
                 <Column editable="false" title="C&#xf3;digo" type="java.lang.Integer"/>
-                <Column editable="false" title="Nome Vinho" type="java.lang.String"/>
-                <Column editable="false" title="Pa&#xed;s" type="java.lang.String"/>
-                <Column editable="false" title="Safra" type="java.lang.Integer"/>
+                <Column editable="false" title="Sabor" type="java.lang.String"/>
+                <Column editable="false" title="Descricao" type="java.lang.String"/>
+                <Column editable="false" title="Tamanho" type="java.lang.String"/>
                 <Column editable="true" title="Pre&#xe7;o" type="java.lang.Float"/>
               </Table>
             </Property>
@@ -356,9 +333,6 @@
     </Container>
     <Component class="javax.swing.JButton" name="btIncluir">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagens/add2-24.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Incluir"/>
       </Properties>
     </Component>

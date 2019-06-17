@@ -42,9 +42,9 @@ public class CardapioView extends AbstractTableModel{
             case 1:
                 return linhas.get(linha).getNome();
             case 2:
-                return linhas.get(linha).getPais();
+                return linhas.get(linha).getDescricao();
             case 3:
-                return linhas.get(linha).getSafra();
+                return linhas.get(linha).getTamanho();
             case 4:
                 return linhas.get(linha).getPreco();
         }
@@ -61,10 +61,10 @@ public class CardapioView extends AbstractTableModel{
                 linhas.get(linha).setNome((String)valor);
                 break;
             case 2:
-                linhas.get(linha).setPais((String)valor);
+                linhas.get(linha).setDescricao((String)valor);
                 break;
             case 3:
-                linhas.get(linha).setSafra(Integer.parseInt((String)valor));
+                linhas.get(linha).setTamanho((String)valor);
                 break;
             case 4:
                 linhas.get(linha).setPreco(Double.parseDouble((String)valor));
