@@ -84,7 +84,7 @@ public class CardapioDAO {
         return prod;
     }
     
-    public ArrayList<Cardapio> ListaProdutros() throws SQLException{
+    public ArrayList<Cardapio> ListaProdutos() throws SQLException{
        
         ArrayList<Cardapio> produtos = new ArrayList<Cardapio>();
         

@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 public class DbConnection {
     
@@ -17,13 +18,14 @@ public class DbConnection {
     // Connection DB
     public Connection getConnection() throws SQLException {
         Connection con = null;
+
         try {
-	   Class.forName(driver);
+       Class.forName(driver);
            con = DriverManager.getConnection(url, user, password);
         } 
         catch (ClassNotFoundException e) {
-            System.out.println(e.getMessage());   
-	}
+            JOptionPane.showMessageDialog(null,"Problemas na conexão com a fonte de dados! "+e,"Banco da dados", JOptionPane.ERROR_MESSAGE);
+        }
 	return con;
     }
 

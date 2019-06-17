@@ -13,10 +13,11 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import model.Cardapio;
 import model.CardapioDAO;
+import view.CardapioTM;
 import view.CardapioView;
 import view.fCardapio;
 
-public class PizzariaController {
+public class PizzariaController implements ActionListener, ListSelectionListener{
     
     private fCardapio frmCardapio;
     
@@ -24,7 +25,7 @@ public class PizzariaController {
     
     private char flagInsAltCons = 'C'; // I --> Incluir  A--> Alterar - C-->Consulta;
     
-    private CardapioView tabModel;
+    private CardapioTM tabModel;
     
     
     public PizzariaController(fCardapio frmCardapio) throws SQLException{
@@ -39,10 +40,10 @@ public class PizzariaController {
     
     private void inicializaTableModel() throws SQLException {
         
-        tabModel = new CardapioView();
+        tabModel = new CardapioTM();
         frmCardapio.getTbCardapio().setModel(tabModel);
     }
-    
+     
     private void adicionarListeners() {
         frmCardapio.getBtIncluir().addActionListener(this);
         frmCardapio.getBtAlterar().addActionListener(this);
@@ -54,7 +55,7 @@ public class PizzariaController {
         frmCardapio.getTbCardapio().getSelectionModel().addListSelectionListener(this);
     }   
     
-
+    @Override
     public void actionPerformed(ActionEvent acao) {
         
         if(acao.getActionCommand().equals("Incluir")){
@@ -112,7 +113,7 @@ public class PizzariaController {
                 int codCardapio;
                 codCardapio = dao.Inserir(dadosFrmProduto());
                 frmCardapio.getLblCodigo().setText(Integer.toString(codCardapio));
-                tabModel.addProdutos(dadosFrmProduto());
+                tabModel.addCardapio(dadosFrmProduto());
             }
             else{
                 dao.Alterar(dadosFrmProduto());
@@ -140,7 +141,7 @@ public class PizzariaController {
     private void listarTodos() {
         try {
             tabModel.limpar();
-            tabModel.setProdutos(dao.ListaProdutros());
+            tabModel.setCardapios(dao.ListaProdutos());
         } catch (SQLException ex) {
             Logger.getLogger(controller.PizzariaController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -227,13 +228,13 @@ public class PizzariaController {
     private void desabilitarBotoesSalvar() {
         habilitaDesabilitaBotoes(false);
         habilitaDesabilitaPainel(frmCardapio.getPaCardapio(), false);
-        
     }
 
+    @Override
     public void valueChanged(ListSelectionEvent lse) throws IndexOutOfBoundsException{
                 
         try {
-            Cardapio cardapio = tabModel.getProdutos().get(frmCardapio.getTbCardapio().getSelectedRow());
+            Cardapio cardapio = tabModel.getCardapios().get(frmCardapio.getTbCardapio().getSelectedRow());
             dadosProdutoFrm(cardapio);
         }catch (IndexOutOfBoundsException e) {
         }
