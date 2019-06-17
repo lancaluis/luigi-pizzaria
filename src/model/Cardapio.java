@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
-/**
- *
- * @author llanca
- */
 public class Cardapio {
     
     private int id_pizza;
@@ -17,10 +8,10 @@ public class Cardapio {
     private String tamanho;
     private double preco;
 
-    public Vinho() {
+    public Cardapio() {
     }
 
-    public Vinho(int codigo, String nome, String descricao, String tamanho, double preco) {
+    public Cardapio(int codigo, String nome, String descricao, String tamanho, double preco) {
         this.id_pizza = codigo;
         this.nome = nome;
         this.descricao = descricao;
@@ -47,12 +38,16 @@ public class Cardapio {
     public String getDescricao() {
         return descricao;
     }
+    
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 
     public void setTamanho(String tamanho) {
         this.tamanho = tamanho;
     }
 
-    public int getTamanho() {
+    public String getTamanho() {
         return tamanho;
     }
 

@@ -12,12 +12,12 @@ public class CardapioDAO {
     private Connection con = null;
     private PreparedStatement stm;
     private ResultSet rs;
-    private DaoBasicoConexao dao;
+    private DbConnection dao;
     
     public CardapioDAO(){
-        dao = new DaoBasicoConexao();
+        dao = new DbConnection();
         try{
-            con = dao.getConexao();
+            con = dao.getConnection();
         }
         
         catch(SQLException e){
@@ -32,7 +32,7 @@ public class CardapioDAO {
         stm = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
         stm.setString(1, produto.getNome());
         stm.setString(2, produto.getDescricao());
-        stm.setInt(3, produto.getTamanho());
+        stm.setString(3, produto.getTamanho());
         stm.setDouble(4, produto.getPreco());
         
         stm.executeUpdate();
@@ -52,7 +52,7 @@ public class CardapioDAO {
         stm = con.prepareStatement(sql);
         stm.setString(1, produto.getNome());
         stm.setString(2, produto.getDescricao());
-        stm.setInt(3, produto.getTamanho());
+        stm.setString(3, produto.getTamanho());
         stm.setDouble(4, produto.getPreco());
         stm.setInt(5, produto.getCodigo());
         
