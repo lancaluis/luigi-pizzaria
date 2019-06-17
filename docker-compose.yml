@@ -9,7 +9,9 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 123Aa321
-      MYSQL_DATABASE: luigilanches
+      MYSQL_DATABASE: luigipizza
+    ports: 
+      - 3306:3306
 
   adminer:
     image: adminer

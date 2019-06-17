@@ -51,7 +51,6 @@ public class PizzariaController implements ActionListener, ListSelectionListener
         frmCardapio.getBtSalvar().addActionListener(this);
         frmCardapio.getBtCancelar().addActionListener(this);
         frmCardapio.getBtListarTodos().addActionListener(this);
-        frmCardapio.getBtPesquisar().addActionListener(this);
         frmCardapio.getTbCardapio().getSelectionModel().addListSelectionListener(this);
     }   
     
@@ -70,8 +69,6 @@ public class PizzariaController implements ActionListener, ListSelectionListener
             cancelarProduto();
         } else if (acao.getActionCommand().equals("Listar Todos")){
             listarTodos();
-        } else if (acao.getActionCommand().equals("Pesquisar")){
-            pesquisarProduto();
         }
      }
 
@@ -148,16 +145,6 @@ public class PizzariaController implements ActionListener, ListSelectionListener
         //habilita botoes Alterar e Excluir
         frmCardapio.getBtAlterar().setEnabled(true);
         frmCardapio.getBtExcluir().setEnabled(true);
-    }
-
-    private void pesquisarProduto() {
-        Cardapio cardapio;
-        try{
-            cardapio = dao.localizarProduto(frmCardapio.getTxtLocalizar().getText());
-            dadosProdutoFrm(cardapio);
-        }catch(SQLException e){
-            
-        }
     }
 
     private void habilitarBotoesSalvar() {

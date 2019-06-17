@@ -11,7 +11,7 @@ public class DbConnection {
     
     // Connection settings
     private String driver = "com.mysql.jdbc.Driver";
-    private String url = "jdbc:mysql://localhost:8080/luigipizza";
+    private String url = "jdbc:mysql://localhost:3306/luigipizza";
     private String user = "root";
     private String password = "123Aa321";
     
