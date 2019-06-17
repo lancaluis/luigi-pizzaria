@@ -2,7 +2,9 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class DbConnection {
     
@@ -23,6 +25,33 @@ public class DbConnection {
             System.out.println(e.getMessage());   
 	}
 	return con;
+    }
+
+    public void fecharConexao(Connection con, Statement stmt, ResultSet rs){
+        
+        try{
+            if (stmt != null){
+                stmt.close();
+            }
+        }
+        catch (SQLException e){
+            
+        }
+        
+        try{
+            if (rs != null){
+                rs.close();
+            }
+        }
+        catch (SQLException e){
+        }
+               
+        
+        try {
+            con.close();
+        } catch (SQLException e) {
+        }
+        System.out.println("DbConnection fechada!");
     }
     
 }
