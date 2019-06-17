@@ -3,7 +3,7 @@ package view;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import view.fCardapio;
+import view.fBebida;
 
 public class Pizzaria extends javax.swing.JFrame {
 
@@ -36,6 +36,11 @@ public class Pizzaria extends javax.swing.JFrame {
         jLabel1.setText("LUIGI PIZZARIA");
 
         jButton3.setText("Bebidas");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,7 +78,7 @@ public class Pizzaria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       fCardapio cardapio;
+        fCardapio cardapio;
         try {
             cardapio = new fCardapio();
             cardapio.setVisible(true);
@@ -81,8 +86,19 @@ public class Pizzaria extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Pizzaria.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        fBebida bebida;
+        try {
+            bebida = new fBebida();
+            bebida.setVisible(true);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Pizzaria.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     public static void main(String args[]) {
 
