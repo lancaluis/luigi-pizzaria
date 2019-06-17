@@ -82,7 +82,7 @@ public class ClienteDAO {
         return prod;
     }
     
-    public ArrayList<Cliente> Listaclientes() throws SQLException{
+    public ArrayList<Cliente> ListaClientes() throws SQLException{
        
         ArrayList<Cliente> clientes = new ArrayList<Cliente>();
         

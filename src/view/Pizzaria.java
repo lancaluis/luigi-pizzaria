@@ -24,6 +24,11 @@ public class Pizzaria extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jButton1.setText("Clientes");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Pizzas");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -99,6 +104,17 @@ public class Pizzaria extends javax.swing.JFrame {
             Logger.getLogger(Pizzaria.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         fCliente cliente;
+        try {
+            cliente = new fCliente();
+            cliente.setVisible(true);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Pizzaria.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
 

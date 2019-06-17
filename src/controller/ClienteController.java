@@ -11,21 +11,20 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import model.Cardapio;
-import model.CardapioDAO;
+import model.Cliente;
+import model.ClienteDAO;
 import view.ClienteTM;
-import view.ClienteView;
 import view.fCliente;
 
 public class ClienteController implements ActionListener, ListSelectionListener{
     
     private fCliente frmCliente;
     
-    private CardapioDAO dao = new CardapioDAO();
+    private ClienteDAO dao = new ClienteDAO();
     
     private char flagInsAltCons = 'C'; // I --> Incluir  A--> Alterar - C-->Consulta;
     
-    private CardapioTM tabModel;
+    private ClienteTM tabModel;
     
     
     public ClienteController(fCliente frmCliente) throws SQLException{
@@ -40,7 +39,7 @@ public class ClienteController implements ActionListener, ListSelectionListener{
     
     private void inicializaTableModel() throws SQLException {
         
-        tabModel = new CardapioTM();
+        tabModel = new ClienteTM();
         frmCliente.getTbCardapio().setModel(tabModel);
     }
      
@@ -110,15 +109,14 @@ public class ClienteController implements ActionListener, ListSelectionListener{
                 int codCardapio;
                 codCardapio = dao.Inserir(dadosFrmProduto());
                 frmCliente.getLblCodigo().setText(Integer.toString(codCardapio));
-                tabModel.addCardapio(dadosFrmProduto());
+                tabModel.addCliente(dadosFrmProduto());
             }
             else{
                 dao.Alterar(dadosFrmProduto());
                 
-                tabModel.setValueAt(frmCliente.getTxtNomeCardapio().getText(), frmCliente.getTbCardapio().getSelectedRow(),1);
-                tabModel.setValueAt(frmCliente.getTxtDescricao().getText(), frmCliente.getTbCardapio().getSelectedRow(),2);
-                tabModel.setValueAt(frmCliente.getTxtTamanho().getText(), frmCliente.getTbCardapio().getSelectedRow(),3);
-                tabModel.setValueAt(frmCliente.getTxtPreco().getText(), frmCliente.getTbCardapio().getSelectedRow(),4);
+                tabModel.setValueAt(frmCliente.getTxtNome().getText(), frmCliente.getTbCardapio().getSelectedRow(),1);
+                tabModel.setValueAt(frmCliente.getTxtTelefone().getText(), frmCliente.getTbCardapio().getSelectedRow(),2);
+                tabModel.setValueAt(frmCliente.getTxtEndereco().getText(), frmCliente.getTbCardapio().getSelectedRow(),3);
                
             }
         }catch (SQLException e){
@@ -138,7 +136,7 @@ public class ClienteController implements ActionListener, ListSelectionListener{
     private void listarTodos() {
         try {
             tabModel.limpar();
-            tabModel.setCardapios(dao.ListaProdutos());
+            tabModel.setClientes(dao.ListaClientes());
         } catch (SQLException ex) {
             Logger.getLogger(controller.ClienteController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -189,27 +187,25 @@ public class ClienteController implements ActionListener, ListSelectionListener{
         frmCliente.getLblCodigo().setText("");
     }
 
-    private Cardapio dadosFrmProduto() {
-       Cardapio cardapio = new Cardapio();
+    private Cliente dadosFrmProduto() {
+       Cliente cliente = new Cliente();
        
        if(flagInsAltCons != 'I')       
-          cardapio.setCodigo(Integer.parseInt(frmCliente.getLblCodigo().getText()));
+          cliente.setCodigo(Integer.parseInt(frmCliente.getLblCodigo().getText()));
            
-       cardapio.setNome(frmCliente.getTxtNomeCardapio().getText());
-       cardapio.setDescricao(frmCliente.getTxtDescricao().getText());
-       cardapio.setTamanho(frmCliente.getTxtTamanho().getText());
-       cardapio.setPreco(Double.parseDouble(frmCliente.getTxtPreco().getText()));
-       return cardapio;
+       cliente.setNome(frmCliente.getTxtNome().getText());
+       cliente.setTelefone(frmCliente.getTxtTelefone().getText());
+       cliente.setEndereco(frmCliente.getTxtEndereco().getText());
+       return cliente;
        
     }
     
-    private void dadosProdutoFrm(Cardapio cardapio) {
+    private void dadosProdutoFrm(Cliente cliente) {
         
-        frmCliente.getLblCodigo().setText(""+cardapio.getCodigo());
-        frmCliente.getTxtNomeCardapio().setText(cardapio.getNome());
-        frmCliente.getTxtDescricao().setText(cardapio.getDescricao());
-        frmCliente.getTxtTamanho().setText(""+cardapio.getTamanho());
-        frmCliente.getTxtPreco().setText(""+cardapio.getPreco());
+        frmCliente.getLblCodigo().setText(""+cliente.getCodigo());
+        frmCliente.getTxtNome().setText(cliente.getNome());
+        frmCliente.getTxtTelefone().setText(cliente.getTelefone());
+        frmCliente.getTxtEndereco().setText(""+cliente.getEndereco());
     }
 
     private void desabilitarBotoesSalvar() {
@@ -221,8 +217,8 @@ public class ClienteController implements ActionListener, ListSelectionListener{
     public void valueChanged(ListSelectionEvent lse) throws IndexOutOfBoundsException{
                 
         try {
-            Cardapio cardapio = tabModel.getCardapios().get(frmCliente.getTbCardapio().getSelectedRow());
-            dadosProdutoFrm(cardapio);
+            Cliente cliente = tabModel.getClientes().get(frmCliente.getTbCardapio().getSelectedRow());
+            dadosProdutoFrm(cliente);
         }catch (IndexOutOfBoundsException e) {
         }
     }

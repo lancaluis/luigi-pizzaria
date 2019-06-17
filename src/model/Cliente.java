@@ -12,14 +12,14 @@ public class Cliente {
     private String telefone;
     private String endereco;
 
-    public Cardapio() {
+    public Cliente() {
     }
 
-    public Cardapio(int codigo, String nome, String telefone, String endereco) {
+    public Cliente(int codigo, String nome, String telefone, String endereco) {
         this.id_cliente = codigo;
         this.nome = nome;
-        this.telefone = descricao;
-        this.endereco = tamanho;
+        this.telefone = telefone;
+        this.endereco = endereco;
 
     }
 

@@ -119,13 +119,9 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="txtEndereco" min="-2" pref="71" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="txtNome" min="-2" pref="262" max="-2" attributes="0"/>
+                      <Component id="txtNome" pref="262" max="32767" attributes="0"/>
                       <Component id="lblCodigo" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtEndereco" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -154,8 +150,6 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                    
                   </Group>
                   <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
@@ -170,12 +164,12 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Sabor"/>
+            <Property name="text" type="java.lang.String" value="Nome:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tamanho"/>
+            <Property name="text" type="java.lang.String" value="Endere&#xe7;o:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNome">
@@ -187,20 +181,18 @@
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEnderecoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o"/>
+            <Property name="text" type="java.lang.String" value="Telefone:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtTelefone">
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Pre&#xe7;o: "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblCodigo">
@@ -229,7 +221,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="99" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="                     Pizzas"/>
+        <Property name="text" type="java.lang.String" value="                   Clientes"/>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
       <AccessibilityProperties>
